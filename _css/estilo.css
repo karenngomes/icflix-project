@@ -1,0 +1,246 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
+
+body {
+    background-color: #141414;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.menu * {
+    z-index: 2;
+}
+
+.menu {
+    width: 100%;
+    height: 54px;
+    background-color: #222;
+    font-family: Montserrat, 'Arial';
+    font-size: 15px;
+}
+
+.menu ul {
+    list-style: none;
+    position: relative;
+}
+
+.menu ul li {
+    width: 180px;
+    float: left;
+}
+
+.menu ul li img {
+    display: block;
+    margin: -10px auto -13px 12px;
+}
+
+.menu a {
+    padding: 16px;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    background-color: #222;
+    color: #fff;
+}
+
+.menu ul ul {
+    position: absolute;
+    visibility: hidden;
+}
+
+.menu ul li:hover ul {
+    visibility: visible;
+}
+
+.menu a:hover {
+    background-color: #f4f4f4;
+    color: #555;
+}
+
+.menu ul ul li {
+    float: none;
+    border-bottom: solid 0px #ccc;
+}
+
+.menu ul ul li a {
+    background-color: #cd0000;
+}
+
+label[for="bt_menu"] {
+    padding: 5px;
+    background-color: #222;
+    color: #fff;
+    font-family: Montserrat, 'Arial';
+    text-align: center;
+    font-size: 30px;
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+}
+
+#bt_menu {
+    display: none;
+}
+
+label[for="bt_menu"] {
+    display: none;
+}
+
+@media(max-width: 800px) {
+    label[for="bt_menu"] {
+        display: block;
+    }
+    #bt_menu:checked~.menu {
+        margin-left: 0;
+    }
+    .menu {
+        margin-top: 5px;
+        margin-left: -100%;
+        transition: all .4s;
+    }
+    .menu ul li img {
+        margin: auto;
+    }
+    .menu ul li {
+        width: 100%;
+        float: none;
+    }
+    .menu ul ul {
+        position: static;
+        overflow: hidden;
+        max-height: 0;
+        transition: all .4s;
+    }
+    .menu ul li:hover ul {
+        height: auto;
+        max-height: 200px;
+    }
+}
+
+#search {
+    width: 357px;
+    margin: 4px;
+    float: right;
+}
+
+#search_text {
+    width: 297px;
+    padding: 15px 0 15px 20px;
+    font-size: 16px;
+    font-family: Montserrat, sans-serif;
+    border: 0 none;
+    height: 54px;
+    margin-right: 0;
+    color: white;
+    outline: none;
+    background: #222;
+    /*#1f7f5c;*/
+    float: left;
+    box-sizing: border-box;
+    transition: all 0.15s;
+    margin-top: -4px;
+}
+
+::-webkit-input-placeholder {
+    /* WebKit browsers */
+    color: white;
+}
+
+#search_text:hover {
+    background: #e13939;
+    /*rgb(64, 151, 119);*/
+}
+
+#search_button {
+    border: 0 none;
+    background: #d81818 ;
+    background-image: url('../searchicon.svg');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 100%;
+    width: 60px;
+    float: left;
+    padding: 0;
+    text-align: center;
+    height: 54px;
+    cursor: pointer;
+    margin-top: -4px;
+}
+
+.mySlides {
+    display: none
+}
+
+.w3-left, .w3-right, .w3-badge {
+    cursor: pointer
+}
+
+.w3-badge {
+    height: 13px;
+    width: 13px;
+    padding: 0
+}
+
+.mySlides {
+    padding: 10px;
+    height: 510px;
+    border-radius: 15px;
+}
+
+.sessao {
+    margin: 10px;
+    color: #fff;
+}
+
+.sessao h1 {
+    padding: 5px;
+    font-family: Montserrat, Arial, sans-serif;
+    font-size: 25px;
+    color: #ccc;
+    background-color: #942424;
+    border-radius: 2px;
+}
+
+.filmes {
+    list-style: none;
+    display: flex;
+    margin: 6px;
+}
+
+.min:hover {
+    transform: scale(1.2);
+    /*width: 300px;
+   		height: 380px;*/
+}
+
+.min {
+    height: 300px;
+    width: 220px;
+    padding: 7px;
+    transition: all .4s;
+}
+
+#ultimo {
+    margin-bottom: 50px;
+}
+
+footer#rodape {
+    clear: both;
+    /*'limpa' toda configuração que foi feito da section e aside*/
+    background-color: #cd0000;
+    padding-top: 2px;
+    padding-bottom: 1px;
+}
+
+footer#rodape p {
+    margin: 5px;
+    text-align: center;
+    color: #fff;
+}
+
+footer#rodape p a {
+    text-decoration: none;
+    color: #fff;
+}

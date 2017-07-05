@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="_css/estilo.css">
+	<title>ICFLIX</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<body>
+	<div id="interface">
+
+		<input type="checkbox" id="bt_menu">
+		<label for="bt_menu">&#9776;</label>
+
+		<nav class="menu">
+			<ul>
+				<li>
+					<a href="index.html"><img src="_imagens/logo-icflix.png"></a>
+				</li>
+				<li><a href="#">Filmes</a>
+					<ul>
+						<li><a href="#">Suspense</a></li>
+						<li><a href="#acaoeaventura">Ação e Aventura</a></li>
+						<li><a href="#">Comédia</a></li>
+					</ul>
+				</li>
+				<li><a href="#">Séries</a>
+					<ul>
+						<li><a href="#">EM MANUTENÇÃO!</a></li>
+					</ul>
+				</li>
+				<li id="search">
+					<form action="" method="get">
+						<input type="text" name="search_text" id="search_text" placeholder="Pesquise pelo seu filme" />
+						<input type="button" name="search_button" id="search_button"></a>
+					</form>
+				</li>
+			</ul>
+		</nav>
+
+		<div class="w3-content w3-display-container" style="max-width:1400px">
+			<img class="mySlides" src="_imagens/meu-passado-banner.jpg" style="width:100%">
+			<img class="mySlides" src="_imagens/contagio-banner.jpg" style="width:100%">
+			<img class="mySlides" src="_imagens/black_swan_wallpaper.jpg" style="width:100%">
+			<div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
+				<!--<div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
+			<div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>-->
+				<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+				<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+				<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+			</div>
+		</div>
+		<script>
+			var slideIndex = 1;
+			showDivs(slideIndex);
+
+			function plusDivs(n) {
+				showDivs(slideIndex += n);
+			}
+
+			function currentDiv(n) {
+				showDivs(slideIndex = n);
+			}
+
+			function showDivs(n) {
+				var i;
+				var x = document.getElementsByClassName("mySlides");
+				var dots = document.getElementsByClassName("demo");
+				if (n > x.length) {
+					slideIndex = 1
+				}
+				if (n < 1) {
+					slideIndex = x.length
+				}
+				for (i = 0; i < x.length; i++) {
+					x[i].style.display = "none";
+				}
+				for (i = 0; i < dots.length; i++) {
+					dots[i].className = dots[i].className.replace(" w3-white", "");
+				}
+				x[slideIndex - 1].style.display = "block";
+				dots[slideIndex - 1].className += " w3-white";
+			}
+			slideAutomatico();
+
+			function slideAutomatico() {
+				showDivs(slideIndex += 1);
+				setTimeout(slideAutomatico, 2000);
+			}
+		</script>
+		<header>
+			<div class="sessao">
+				<h1>Suspense</h1>
+				<div class="filmes">
+					<a href="_paginas/pele-habito.html"><img src="_imagens/pele_habito.jpg" class="min"></a>
+					<a href="_paginas/cisne-negro.html"><img src="_imagens/CISNE-NEGRO.jpg" class="min"></a>
+					<a href="_paginas/psicose.html"><img src="_imagens/psicose.jpg" class="min"></a>
+					<a href="_paginas/a-orfa.html"><img src="_imagens/a-orfa.jpg" class="min"></a>
+					<a href="_paginas/ilha-do-medo.html"><img src="_imagens/ilha-do-medo.jpg" class="min"></a>
+					<a href="_paginas/o-iluminado.html"><img src="_imagens/o-iluminado.jpg" class="min"></a>
+				</div>
+			</div>
+			<span id="#acaoeaventura">
+		<div class="sessao" id="#acaoeaventura">
+			<h1>Ação e Aventura</h1>
+			<div class="filmes">
+				<a href="_paginas/django-livre.html"><img src="_imagens/django-livre.jpg" class="min"></a>
+				<a href="_paginas/bastardos-inglorios.html"><img src="_imagens/bastardos-inglorios.jpeg" class="min"></a>
+				<a href="_paginas/clube-da-luta.html"><img src="_imagens/clube-da-luta.jpg" class="min"></a>
+				<a href="_paginas/contagio.html"><img src="_imagens/contagio.jpg" class="min"></a>
+				<a href="_paginas/elysium.html"><img src="_imagens/Elysium.jpg" class="min"></a>
+				<a href="_paginas/distrito.html"><img src="_imagens/distrito.jpg" class="min"></a>
+			</div>
+		</div>
+		</span>
+
+			<div class="sessao" id="ultimo">
+				<h1>Comédia</h1>
+				<div class="filmes">
+					<a href="_paginas/meu-passado.html"><img src="_imagens/meu-passado.jpg" class="min"></a>
+					<a href="_paginas/beber-nao-case.html"><img src="_imagens/se-beber-nao-case.jpg" class="min"></a>
+					<a href="_paginas/minha-mae-peca.html"><img src="_imagens/minha-mae-peca.jpg" class="min"></a>
+					<a href="_paginas/deadpool.html"><img src="_imagens/deadpool.jpg" class="min"></a>
+					<a href="_paginas/sorte-separe.html"><img src="_imagens/ate-sorte-separe.jpg" class="min"></a>
+					<a href="_paginas/norbit.html"><img src="_imagens/norbit.jpg" class="min"></a>
+				</div>
+			</div>
+		</header>
+		<footer id="rodape">
+			<p>Copyright 2017 &copy by Karen Gomes</p>
+			<p><a href="http://facebook.com/gomesskaren" target="_blank">Facebook</a> | <a href="http://twitter.com/gomesskaren" target="_blank">Twitter</a> </p>
+		</footer>
+	</div>
+</body>
+
+</html>
